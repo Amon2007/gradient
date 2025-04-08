@@ -240,6 +240,13 @@ main {
 }
 /* TABLET RESPONSIVE */
 @media (max-width: 1300px) {
+  * {
+    cursor: default !important;
+  }
+
+  .cursor {
+    display: none !important;
+  }
   header {
     padding: 1rem 0.5rem;
   }
@@ -256,8 +263,20 @@ main {
 }
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
+  * {
+    cursor: default !important;
+  }
+
+  .cursor {
+    display: none !important;
+  }
+  .footer {
+    margin: 10%;
+  }
   header {
     padding: 1rem 0.1rem;
+    margin-bottom: 5%;
+    display: block;
   }
 
   nav {
