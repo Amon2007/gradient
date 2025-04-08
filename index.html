@@ -3,28 +3,108 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>NERO®TECHNOLOGIES</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   </head>
   <body>
     <div class="cursor"></div>
-    <img src="/gradient.png" alt="gradient" />
+    <img src="/gradient.png" alt="gradient" class="image-gradient" />
     <div class="layer-blue"></div>
     <div class="content">
       <header>
-        <h1 class="logo">MCODE</h1>
+        <h1 data-aos="fade-down" data-aos-duration="1500" class="logo">
+          NERO®TECHNOLOGIES
+        </h1>
 
         <nav>
-          <a href="#">COMPANY</a>
-          <a href="#">FEATURES</a>
-          <a href="#">RESOURSCES</a>
-          <a href="#">DOCS</a>
+          <a data-aos="fade-down" data-aos-duration="1500" href="#">COMPANY</a>
+          <a data-aos="fade-down" data-aos-duration="2000" href="#">FEATURES</a>
+          <a data-aos="fade-down" data-aos-duration="2500" href="#"
+            >RESOURCES</a
+          >
+          <a data-aos="fade-down" data-aos-duration="3000" href="#">DOCS</a>
         </nav>
-      </header>
-    </div>
 
-    <!-- <left-part!--  -->
-    <div class="conteiner"><h2>I`m</h2></div>
+        <button
+          data-aos="fade-down"
+          data-aos-duration="1500"
+          class="btn-signing"
+        >
+          SIGNING
+        </button>
+      </header>
+
+      <!-- Left content section -->
+      <main>
+        <div class="container">
+          <div
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="300"
+            data-aos-offset="0"
+            data-aos="fade-down"
+            data-aos-duration="1500"
+            class="tag-box"
+          >
+            <div class="tag">INTRUCING &wedbar;</div>
+          </div>
+          <h1
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="300"
+            data-aos-offset="0"
+            data-aos="fade-down"
+            data-aos-duration="2000"
+          >
+            EMAIL FOR <br />DEVELOPERS
+          </h1>
+          <p
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="300"
+            data-aos-offset="0"
+            data-aos="fade-down"
+            data-aos-duration="2500"
+            class="description"
+          >
+            the best way to protect you in CYBERWORD
+          </p>
+          <div
+            data-aos="fade-zoom-in"
+            data-aos-easing="ease-in-back"
+            data-aos-delay="300"
+            data-aos-offset="0"
+            data-aos="fade-down"
+            data-aos-duration="3000"
+            class="buttons"
+          >
+            <a href="#" class="btn-get-started">Documentation &gt;</a>
+            <a href="#" class="btn-signing-main">GetStarted &gt;</a>
+          </div>
+        </div>
+      </main>
+
+      <spline-viewer
+        data-aos="fade-zoom-in"
+        data-aos-easing="ease-in-back"
+        data-aos-delay="300"
+        data-aos-offset="0"
+        data-aos="fade-down"
+        data-aos-duration="3000"
+        class="robot-3d"
+        url="https://prod.spline.design/H-IAEu3DyUOBopS0/scene.splinecode"
+      ></spline-viewer>
+    </div>
+    <script
+      type="module"
+      src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"
+    ></script>
+
     <script src="/script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>
