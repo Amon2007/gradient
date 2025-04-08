@@ -8,13 +8,16 @@ function cursor(e) {
   mouseCursor.style.left = e.pageX + "px";
 }
 
-navLinks.forEach((link) => {
-  link.addEventListener("mouseleave", () => {
-    mouseCursor.classList.remove("link-grow");
-    link.classList.remove("hovered-link");
-  });
-  link.addEventListener("mousemove", () => {
-    mouseCursor.classList.add("link-grow");
-    link.classList.add("hovered-link");
-  });
-});
+navLinks.forEach(
+  (link) => {
+    link.addEventListener("mouseleave", () => {
+      mouseCursor.classList.remove("link-grow");
+      link.classList.remove("hovered-link");
+    });
+    link.addEventListener("mousemove", () => {
+      mouseCursor.classList.add("link-grow");
+      link.classList.add("hovered-link");
+    });
+  },
+  { passive: true }
+);
