@@ -144,9 +144,11 @@ nav a {
 }
 
 .logo {
-  font: 900;
+  transition: transform 0.3s ease;
 }
-
+.logo:hover {
+  transform: rotate(5deg);
+}
 /* MAIN Conrainer */
 
 main {
