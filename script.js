@@ -36,7 +36,7 @@ const { innerHeight } = window;
 gsap.registerPlugin(ScrollTrigger);
 // zoom-out
 gsap.from("#zoom-out h2", {
-  scale: 50,
+  scale: 30,
   stagger: 0.25,
   duration: 3,
   scrollTrigger: {
