@@ -1,7 +1,7 @@
 // Cursor 2
 let mouseCursor = document.querySelector(".cursor");
 let navLinks = document.querySelectorAll(
-  "h1, h2, button, a, p, .nav-list a, .btn-get-started, .btn-signing-main"
+  "h1, button, a, p, .nav-list a, .btn-get-started, .btn-signing-main"
 );
 
 window.addEventListener("mousemove", cursor);
@@ -30,4 +30,19 @@ window.addEventListener("scroll", () => {
   } else {
     navbar.classList.remove("scrolled");
   }
+});
+
+const { innerHeight } = window;
+gsap.registerPlugin(ScrollTrigger);
+// zoom-out
+gsap.from("#zoom-out h2", {
+  scale: 50,
+  stagger: 0.25,
+  duration: 3,
+  scrollTrigger: {
+    trigger: "#zoom-out",
+    pin: true,
+    end: `+=${innerHeight * 1.3}`,
+    scrub: 3,
+  },
 });

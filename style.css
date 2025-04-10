@@ -54,6 +54,8 @@ button {
 }
 
 .image-gradient {
+  max-width: 100%;
+  min-width: 100%;
   margin: 0;
   padding: 0;
   position: absolute;
@@ -129,7 +131,7 @@ nav a {
 .btn-signing {
   background-color: #a7a7a7;
   color: black;
-  padding: 0.8rem 2rem;
+  padding: 0.5rem 1rem;
   border-radius: 50px;
   border: none;
   font-size: 1rem;
@@ -216,9 +218,13 @@ main {
   font-size: 1.2rem;
   letter-spacing: 0.05em;
   max-width: 20rem;
-  color: gray;
+  color: rgb(162, 162, 162);
   margin-top: 0.4rem;
   border-top: 1.5px solid #606060;
+  transition: 0.2s;
+}
+.description:hover {
+  color: black;
 }
 .buttons {
   display: flex;
@@ -241,11 +247,34 @@ main {
 .btn-signing-main:hover {
   background-color: gray;
 }
+container-3d {
+  max-width: 100%;
+}
 .robot-3d {
   position: absolute;
   top: 0;
-  right: -7%;
+  right: 0;
+  margin-bottom: 40px;
+  max-width: 100%;
 }
+/* SCROLL */
+.scroll-afect {
+  height: 100vh;
+  margin-top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.bacg-2 {
+  background-color: white;
+}
+.footer {
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
 /* TABLET RESPONSIVE */
 @media (max-width: 1300px) {
   * {
@@ -275,6 +304,7 @@ main {
     right: 2%;
   }
 }
+
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
   * {

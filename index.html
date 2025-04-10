@@ -60,7 +60,7 @@
           data-aos-duration="1500"
           class="btn-signing"
         >
-          SIGNING
+          ENG
         </button>
       </header>
 
@@ -112,30 +112,37 @@
           </div>
         </div>
       </main>
-      <script
-        type="module"
-        src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"
-      ></script>
-      <spline-viewer
-        data-aos="fade-zoom-in"
-        data-aos-easing="ease-in-back"
-        data-aos-delay="300"
-        data-aos-offset="0"
-        data-aos="fade-down"
-        data-aos-duration="2500"
-        class="robot-3d"
-        url="https://prod.spline.design/BCQgGZJs5M3OI-KJ/scene.splinecode"
-      ></spline-viewer>
-
-      <footer class="footer">
-        <p>&copy; 2025 NERO®TECHNOLOGIES</p>
-      </footer>
+      <section class="container-3d">
+        <script
+          type="module"
+          src="https://unpkg.com/@splinetool/viewer@1.9.82/build/spline-viewer.js"
+        ></script>
+        <spline-viewer
+          data-aos="fade-zoom-in"
+          data-aos-easing="ease-in-back"
+          data-aos-delay="300"
+          data-aos-offset="0"
+          data-aos="fade-down"
+          data-aos-duration="2500"
+          class="robot-3d"
+          url="https://prod.spline.design/BCQgGZJs5M3OI-KJ/scene.splinecode"
+        ></spline-viewer>
+      </section>
     </section>
-
+    <section class="scroll-afect" id="zoom-out">
+      <h2>WE CREATE</h2>
+    </section>
+    <footer class="footer">
+      <p>&copy; 2025 NERO®TECHNOLOGIES</p>
+    </footer>
+    <div class="bacg-2"></div>
     <script src="./script.js" defer></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init();
     </script>
+    <!-- CONNECTION THE LIBRARY -->
+    <script src="https://unpkg.co/gsap@3/dist/gsap.min.js"></script>
+    <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
   </body>
 </html>
