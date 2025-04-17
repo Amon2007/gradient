@@ -1,43 +1,41 @@
-// Cursor 2
-let mouseCursor = document.querySelector(".cursor");
-let navLinks = document.querySelectorAll(
-  "h1, button, a, p, .nav-list a, .btn-get-started, .btn-signing-main"
+const cursor = document.querySelector(".cursor");
+const hoverTargets = document.querySelectorAll(
+  "h1, button, a, p, .btn-signing-main, .btn-get-started"
 );
 
-window.addEventListener("mousemove", cursor);
+let mouseX = 0,
+  mouseY = 0;
+let currentX = 0,
+  currentY = 0;
 
-function cursor(e) {
-  mouseCursor.style.top = e.pageY + "px";
-  mouseCursor.style.left = e.pageX + "px";
+function animateCursor() {
+  currentX += (mouseX - currentX) * 0.2;
+  currentY += (mouseY - currentY) * 0.2;
+  cursor.style.transform = `translate3d(${
+    currentX - cursor.offsetWidth / 2
+  }px, ${currentY - cursor.offsetHeight / 2}px, 0)`;
+
+  hoverTargets.forEach((target) => {
+    const rect = target.getBoundingClientRect();
+    const x = mouseX - rect.left;
+    const y = mouseY - rect.top;
+    target.style.setProperty("--x", `${x}px`);
+    target.style.setProperty("--y", `${y}px`);
+  });
+
+  requestAnimationFrame(animateCursor);
 }
+animateCursor();
 
-navLinks.forEach((link) => {
-  link.addEventListener("mouseleave", () => {
-    mouseCursor.classList.remove("link-grow");
-    link.classList.remove("hovered-link");
-  });
-  link.addEventListener("mousemove", () => {
-    mouseCursor.classList.add("link-grow");
-    link.classList.add("hovered-link");
-  });
-});
-
-// BLUR FOR NAV DURING SCROLL
-window.addEventListener("scroll", () => {
-  const navbar = document.querySelector(".navbar");
-  if (window.scrollY > 50) {
-    navbar.classList.add("scrolled");
-  } else {
-    navbar.classList.remove("scrolled");
-  }
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX;
+  mouseY = e.clientY;
 });
 
 const { innerHeight } = window;
 gsap.registerPlugin(ScrollTrigger);
-// zoom-out
 gsap.from("#zoom-out h2", {
-  scale: 30,
-  stagger: 0.25,
+  scale: 20,
   duration: 3,
   scrollTrigger: {
     trigger: "#zoom-out",

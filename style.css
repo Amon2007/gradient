@@ -2,7 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  cursor: none;
 }
 body {
   background-color: rgb(0, 0, 0);
@@ -16,41 +15,53 @@ body {
 a {
   text-decoration: none;
   display: inline;
-  cursor: none;
 }
 
 button {
   cursor: none;
 }
-
 .cursor {
-  width: 2rem;
-  height: 2rem;
-  border: 2px solid rgb(255, 254, 254);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background: white;
   border-radius: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
   pointer-events: none;
-  transition: all 0.4s ease;
-  transition-property: background, transform;
-  transform-origin: 100% 100%;
-}
-.custom-cursor {
-  transition: transform 0.2s ease-out;
+  mix-blend-mode: difference;
+  transition: transform 0.15s ease, width 0.15s ease, height 0.15s ease;
+  z-index: 1000;
 }
 
-.hovered-link {
+.hover-target {
+  font-size: 32px;
+  font-weight: bold;
+  padding: 100px;
+  position: relative;
+  z-index: 1;
+}
+
+.hover-target::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
   color: black;
-}
-
-.link-grow {
-  transform: scale(2);
-  background-color: rgb(255, 255, 255);
-}
-
-#zoom-out,
-#zoom-in {
-  overflow: hidden;
+  z-index: 2;
+  -webkit-mask-image: radial-gradient(
+    circle 20px at var(--x, 0px) var(--y, 0px),
+    black 20%,
+    transparent 21%
+  );
+  mask-image: radial-gradient(
+    circle 20px at var(--x, 0px) var(--y, 0px),
+    black 20%,
+    transparent 21%
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  pointer-events: none;
 }
 
 .image-gradient {
@@ -273,6 +284,7 @@ container-3d {
   padding: 0 2rem;
   position: relative;
   overflow: hidden;
+  margin-bottom: 1rem;
 }
 
 /* TABLET RESPONSIVE */
@@ -383,6 +395,12 @@ container-3d {
     text-align: center;
     padding: 2rem 0;
     margin-top: 4rem;
+    margin-bottom: 4rem;
     border-top: 1px solid #333;
   }
+}
+
+#zoom-out,
+#zoom-in {
+  overflow: hidden;
 }
